@@ -5,6 +5,19 @@ Dr. Stitches is a simple tool to help you combine multiple Markdown files into
 one, while also providing a nice Jinja Templating Interface in front, 
 configurability and extensibility.
 
+Getting Started
+===============
+
+For now, this isn't on PyPI, but you can get started with:
+
+```sh
+$ git clone https://github.com/hjc1710/stitches-md.git
+$ cd stitches-md
+$ virtualenv .env && source .env/bin/activate  # if you don't want a virtualenv, skip this step
+$ pip install -r requirements.txt
+$ python stitches_md.py
+```
+
 Configuration
 =============
 
@@ -50,3 +63,5 @@ TODOs
     - Things to make it look prettier.
     - Some default convenient filters and global functions.
 7. Pylint.
+8. Make installable.
+9. CLI args to make this easier to run.
