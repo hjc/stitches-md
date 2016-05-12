@@ -2,9 +2,6 @@ from functools import partial
 
 
 def add(sums, amount, location="total", prefix='$'):
-    # @TODO: Flesh out. Would like this to add a number to a global variable
-    # and then return the number for printing. The global variable can then be
-    # accessed through sums.X
     if location not in sums:
         sums[location] = 0.00
     sums[location] += amount
