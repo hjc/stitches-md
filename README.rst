@@ -31,6 +31,12 @@ The full list of configuration keys is:
    your custom template filters and stuff in these extensions. A sample is 
    included in the repo by default.
 
+Why?
+====
+
+Because, I wanted us to write all client facing documentation in Markdown, but
+we needed a tool to join it together.
+
 TODOs
 =====
 
