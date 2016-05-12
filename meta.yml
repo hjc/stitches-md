@@ -1,0 +1,20 @@
+# the list of files to render
+files:
+  - preamble.md
+  - two.md
+  - finish.md
+# variables injected into the Jinja render context, for your enjoyment
+template_vars:
+  a_string: "Foo"
+  a_dict:
+    key: val
+  a_list:
+    - 1
+    - 2
+    - 3
+  an_int: 1
+  a_float: 1.2
+# this value is output after each of the above files we stitch together
+eof_value: "\n\n======= By Croscon =======\n\n"
+extensions:
+  - stitches_extension
