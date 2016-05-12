@@ -28,7 +28,8 @@ def parse_meta(file_, format=None):
         format = 'json' if file_.endswith('.json') else 'yaml'
         file_ = open(file_)
 
-    formats = ['yaml', 'json']
+    # prefer JSON if the format is unknown, because it's stricter
+    formats = ['json', 'yaml']
     if format is not None:
         formats.insert(0, format)
         formats = unique(formats)
@@ -36,9 +37,14 @@ def parse_meta(file_, format=None):
     data = None
     for attempt in formats:
         if attempt == 'json':
-            data = json.load(file_)
-            break
+            try:
+                data = json.load(file_)
+            except ValueError:
+                pass
+            else:
+                break
         elif attempt == 'yaml':
+            # YAML will parse anything...
             data = yaml.load(file_)
             break
         else:
