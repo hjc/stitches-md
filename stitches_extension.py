@@ -8,7 +8,7 @@ def add(sums, amount, location="total", prefix='$'):
     return "{prefix}{amount}".format(prefix=prefix, amount=float(amount))
 
 
-def register_extensions(jinja_env):
+def register_extensions(jinja_env, meta):
     if 'sums' in jinja_env.globals or 'add' in jinja_env.globals:
         raise NotImplementedError("IDK how I'm gonna handle this one just yet...")
     sums = {}

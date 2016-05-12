@@ -73,7 +73,7 @@ def main():
         if not hasattr(ext_mod, 'register_extensions'):
             raise RuntimeError("No register_extensions method found in "
                                "extension: {}".format(ext))
-        ext_mod.register_extensions(jinja_env)
+        ext_mod.register_extensions(jinja_env, meta)
 
     with open("output.md", "w") as out:
         for f in meta['files']:
